@@ -25,6 +25,10 @@ const myRoutes: Routes = [
   {
     path: 'servers',
     component: ServersComponent,
+  },
+  {
+    path: 'users/:id/:name',
+    component: UserComponent,
   }
 ];
 
