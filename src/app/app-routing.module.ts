@@ -16,7 +16,10 @@ const myRoutes: Routes = [
       { path: ':id/:name', component: UserComponent,}
     ]}, // localhost:4200/users
     
-    { path: 'servers', canActivate: [AuthGuardService] ,component: ServersComponent, children: [
+    { path: 'servers', 
+      // canActivate: [AuthGuardService] 
+      canActivateChild: [AuthGuardService],
+      component: ServersComponent, children: [
       { path: ':id/edit', component: EditServerComponent,},
       { path: ':id', component: ServerComponent,}
     ] },
