@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AuthGuardService } from "./auth-guard.service";
+import { ErrorPageComponent } from "./error-page/error-page.component";
 import { HomeComponent } from "./home/home.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { CanDeactivateGuard } from "./servers/edit-server/can-deactivated-guard.service";
@@ -25,8 +26,9 @@ const myRoutes: Routes = [
       { path: ':id', component: ServerComponent,}
     ] },
   
-    { path: 'not-found', component: PageNotFoundComponent},
-  
+    // { path: 'not-found', component: PageNotFoundComponent},
+    { path: 'not-found', component: ErrorPageComponent, data: {msg: "Page not found!"} },
+
     { path: '**', redirectTo: '/not-found'},
   ];
 
