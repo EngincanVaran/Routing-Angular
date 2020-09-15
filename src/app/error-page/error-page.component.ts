@@ -9,7 +9,7 @@ import { ActivatedRoute, Data } from '@angular/router';
 export class ErrorPageComponent implements OnInit {
   errorMsg: string;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.errorMsg = this.route.snapshot.data['msg'];
